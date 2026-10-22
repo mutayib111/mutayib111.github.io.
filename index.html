@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Mutayib Shaik — AI, computer vision, and practical software workflows.">
+<title>Mutayib Shaik | AI & Workflow Portfolio</title>
+<style>
+:root{--bg:#f4f3ee;--paper:#fffefa;--ink:#1c2422;--muted:#66716b;--line:#dce1d9;--accent:#c8f169;--dark:#202b27;--blue:#dce8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit} .wrap{max-width:1120px;margin:auto;padding:0 26px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);gap:18px}.brand{font-weight:800;letter-spacing:-.04em}.brand span{display:inline-block;background:var(--accent);padding:2px 8px;border-radius:5px;margin-right:8px}nav .links{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}nav a{text-decoration:none}nav a:hover{color:var(--ink)}
+.hero{padding:76px 0 54px;display:grid;grid-template-columns:1.35fr .65fr;gap:44px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800;color:#526b3b}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.99;letter-spacing:-.065em;margin:18px 0 24px;max-width:720px}.hero h1 em{font-style:normal;color:#607b39}.hero p{max-width:650px;color:var(--muted);font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--ink);padding:12px 17px;border-radius:8px;font-weight:700;font-size:13px}.btn.primary{background:var(--dark);color:white}.btn:hover{transform:translateY(-1px)}.hero-note{background:var(--dark);color:white;border-radius:18px;padding:26px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.hero-note:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:var(--accent);right:-62px;top:-56px;opacity:.95}.hero-note .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c7d1ca;position:relative;z-index:1}.hero-note strong{font-size:27px;line-height:1.1;letter-spacing:-.04em;max-width:230px;position:relative;z-index:1}.hero-note small{color:#c7d1ca;position:relative;z-index:1}
+section{padding:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}.section-head h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.05em;line-height:1.05;margin:7px 0 0}.section-head p{max-width:420px;color:var(--muted);font-size:14px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;min-height:270px}.card-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.num{font-size:12px;color:var(--muted);font-weight:800}.pill{border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.card h3{font-size:23px;line-height:1.12;letter-spacing:-.04em;margin:24px 0 10px}.card p{font-size:14px;color:var(--muted);margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.tags span{font-size:11px;padding:6px 9px;background:#eef0e9;border-radius:5px}.relevance{border-top:1px solid var(--line);margin-top:19px;padding-top:14px;font-size:12px;color:#4c5d44}.relevance b{color:var(--ink)}.wide{grid-column:1/-1;background:var(--blue);min-height:235px}.wide .relevance{border-color:#c5d4ef}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{padding:19px;background:var(--paper);border:1px solid var(--line);border-radius:10px}.step .n{font-size:11px;color:#607b39;font-weight:900;letter-spacing:.1em}.step h3{font-size:16px;margin:12px 0 7px}.step p{font-size:12px;color:var(--muted);margin:0}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.skill{border:1px solid var(--line);background:var(--paper);padding:18px;border-radius:10px}.skill h3{font-size:14px;margin:0 0 8px}.skill p{font-size:12px;color:var(--muted);margin:0}
+.callout{background:var(--accent);padding:30px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:20px}.callout h2{font-size:clamp(24px,3.5vw,36px);line-height:1.05;letter-spacing:-.05em;margin:0 0 8px}.callout p{margin:0;max-width:620px;font-size:14px}.callout .btn{white-space:nowrap;background:var(--dark);color:white;border-color:var(--dark)}
+footer{padding:28px 0 40px;margin-top:45px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.note{font-size:12px;color:var(--muted);margin-top:14px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:52px}.hero-note{min-height:220px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.workflow{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.callout{align-items:flex-start;flex-direction:column}nav{align-items:flex-start;flex-direction:column}.links{gap:14px!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="#top"><span>MS</span>Mutayib Shaik</a>
+  <div class="links"><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+</nav>
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow">AI · Computer Vision · Workflow Thinking</div>
+    <h1>Making complex workflows <em>simpler.</em></h1>
+    <p>I'm a Computer Science student focused on AI and Machine Learning. I build practical systems that turn data, images, and repetitive tasks into clearer, more usable workflows.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore selected projects ↘</a>
+      <a class="btn" href="https://github.com/mutayib111" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+    </div>
+  </div>
+  <aside class="hero-note">
+    <div class="tag">Portfolio focus</div>
+    <strong>AI that supports the people doing the work.</strong>
+    <small>Exploration · Prototyping · Usability · Documentation</small>
+  </aside>
+</header>
+
+<section id="projects">
+  <div class="section-head">
+    <div><div class="eyebrow">Selected work</div><h2>Projects & experiments</h2></div>
+    <p>Selected from my AI, computer-vision, and application-development work. Each project is framed around the problem, the workflow, and what the implementation enables.</p>
+  </div>
+  <div class="grid">
+    <article class="card wide">
+      <div class="card-top"><span class="num">01 / GENERATIVE AI</span><span class="pill">Research project</span></div>
+      <h3>Generative Microscopy Image Reconstruction</h3>
+      <p>Research project exploring AI methods for reconstructing and enhancing microscopy images. The workflow considers generative approaches, image segmentation, and quantitative evaluation to make visual information easier to inspect.</p>
+      <div class="tags"><span>Generative AI</span><span>U-Net / segmentation</span><span>Image enhancement</span><span>PSNR · SSIM · IoU</span></div>
+      <div class="relevance"><b>Why it matters for this role:</b> experience thinking about visual quality, evaluating AI outputs, and building repeatable image-processing workflows.</div>
+    </article>
+    <article class="card">
+      <div class="card-top"><span class="num">02 / WEB APP</span><span class="pill">Application</span></div>
+      <h3>FitSync — Personalized Fitness & Diet Platform</h3>
+      <p>A web platform concept that brings fitness and diet recommendations into one experience, with a dashboard and personalized targets. Focus areas include clear information hierarchy and making recommendations understandable to users.</p>
+      <div class="tags"><span>Flask / web</span><span>UI flow</span><span>Dashboard</span><span>Personalization</span></div>
+      <div class="relevance"><b>Why it matters:</b> user-centred thinking and translating a multi-step process into an accessible interface.</div>
+    </article>
+    <article class="card">
+      <div class="card-top"><span class="num">03 / TIME SERIES AI</span><span class="pill">ML project</span></div>
+      <h3>Human Activity Recognition using LSTM</h3>
+      <p>An activity-recognition system using smartphone accelerometer and gyroscope data. The project involves preparing sensor data and applying a sequence model to classify activity patterns.</p>
+      <div class="tags"><span>LSTM</span><span>Sensor data</span><span>Preprocessing</span><span>Classification</span></div>
+      <div class="relevance"><b>Why it matters:</b> demonstrates a structured data pipeline and model evaluation rather than treating AI as a black box.</div>
+    </article>
+    <article class="card">
+      <div class="card-top"><span class="num">04 / OPERATIONS TOOL</span><span class="pill">Desktop app</span></div>
+      <h3>Pharmacy Management System</h3>
+      <p>A role-based desktop application covering stock details, invoice generation, and expiry tracking. The main idea is to organise routine operational tasks into a single, consistent interface.</p>
+      <div class="tags"><span>Python</span><span>Tkinter</span><span>SQLite</span><span>Workflow design</span></div>
+      <div class="relevance"><b>Why it matters:</b> a practical example of reducing manual effort and making repeatable tasks easier to complete.</div>
+    </article>
+    <article class="card">
+      <div class="card-top"><span class="num">05 / DOCUMENT WORKFLOW</span><span class="pill">Web app</span></div>
+      <h3>Event Management & Ticket Generation</h3>
+      <p>A Flask application for event listings and registration, with downloadable tickets. It connects form input, application logic, and a generated document in one flow.</p>
+      <div class="tags"><span>Flask</span><span>Python</span><span>ReportLab</span><span>Automation</span></div>
+      <div class="relevance"><b>Why it matters:</b> shows how a small software tool can remove repetitive steps between a user action and a finished output.</div>
+    </article>
+    <article class="card">
+      <div class="card-top"><span class="num">06 / ROUTING CONCEPT</span><span class="pill">AI application</span></div>
+      <h3>Ambulance Traffic Control System</h3>
+      <p>A concept for an AI-supported traffic-control dashboard, with hospital-location information and a Raspberry Pi integration direction. It explores how data and interfaces can support time-sensitive decisions.</p>
+      <div class="tags"><span>Python</span><span>Dashboard</span><span>Location data</span><span>Prototype thinking</span></div>
+      <div class="relevance"><b>Why it matters:</b> practice translating a complex real-world need into a system workflow and an operator-facing interface.</div>
+    </article>
+  </div>
+  <p class="note">Project summaries are based on my project descriptions. Add verified repository links, screenshots, demo videos, and measured results before sharing this portfolio. Do not present a prototype as a deployed product.</p>
+</section>
+
+<section id="approach">
+  <div class="section-head">
+    <div><div class="eyebrow">How I work</div><h2>From friction to a useful tool</h2></div>
+    <p>This is the mindset I would bring to an AI-in-design workflow: understand the task first, then test the simplest useful intervention.</p>
+  </div>
+  <div class="workflow">
+    <div class="step"><div class="n">STEP 01</div><h3>Understand</h3><p>Map the current process and identify repetitive, slow, or error-prone steps.</p></div>
+    <div class="step"><div class="n">STEP 02</div><h3>Explore</h3><p>Compare AI tools and conventional automation against a clear task and success criteria.</p></div>
+    <div class="step"><div class="n">STEP 03</div><h3>Prototype</h3><p>Build a small script or interface and test it on representative examples.</p></div>
+    <div class="step"><div class="n">STEP 04</div><h3>Document</h3><p>Record limitations, usage steps, output quality, and what should be improved next.</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-head">
+    <div><div class="eyebrow">Technical toolkit</div><h2>What I work with</h2></div>
+    <p>Tools and concepts used across my project work. Keep this list aligned with what you can confidently explain in an interview.</p>
+  </div>
+  <div class="skills">
+    <div class="skill"><h3>AI & Computer Vision</h3><p>Python, OpenCV, NumPy, TensorFlow / Keras, PyTorch, scikit-learn, image segmentation and generative-model concepts.</p></div>
+    <div class="skill"><h3>Applications & Automation</h3><p>Flask, Tkinter, SQLite, ReportLab, data preprocessing, dashboards, and document-generation workflows.</p></div>
+    <div class="skill"><h3>Evaluation & Communication</h3><p>Model evaluation, visual-quality metrics, workflow diagrams, project documentation, and explaining technical ideas clearly.</p></div>
+  </div>
+  <p class="note">Only retain tools you actually used in the projects you present. Add design tools such as Figma, Blender, or KeyShot only if you have hands-on work to show.</p>
+</section>
+
+<section id="contact">
+  <div class="callout">
+    <div><h2>Interested in practical AI for design.</h2><p>I’m keen to explore how AI, scripting, and thoughtful interfaces can remove friction from creative and technical workflows.</p></div>
+    <a class="btn" href="https://github.com/mutayib111" target="_blank" rel="noreferrer">View GitHub ↗</a>
+  </div>
+</section>
+<footer><span>© <span id="year">2026</span> Mutayib Shaik</span><span>AI · Computer Vision · Workflow Tools</span><span><a href="https://github.com/mutayib111" target="_blank" rel="noreferrer">github.com/mutayib111</a></span></footer>
+</div>
+</body>
+</html>
